@@ -27,8 +27,7 @@ export class RouteBComponent implements OnInit {
     
      this.membServ.getMember(this.route.snapshot.params['id'])
      .then(obj => {let key =Object.keys(obj)[0]; return obj[key];})
-     .then(mem => this.selected = mem)
-     .then(sel => this.membServ.selected = sel);
+     .then(mem => this.selected = this.membServ.selected = mem);
   }
 
 }
